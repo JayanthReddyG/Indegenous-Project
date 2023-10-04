@@ -1,0 +1,56 @@
+body{
+    background-image: url(https://d5a9y5rnan99s.cloudfront.net/images/marketing/pages/landing/video_illustration.0f6658b067b6.png);
+    background-repeat: no-repeat;
+    margin: auto;
+    /* margin-left: 500px; */
+    background-position: top;
+}
+
+#completeContent{
+    border: solid black;
+    border-radius: 9px;
+    padding: 11px;
+    margin: 10px;
+    display:none;
+    line-height: 29.9px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+.Input{
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
+}
+#researchTopic{
+    border-radius: 16px;
+    /* color: red; */
+    /* border: solid 3px #a42ba4; */
+    padding: 6px;
+}
+button{
+    border-radius: 15px;
+    border: solid #252325 2px;
+    background-color: #605665;
+    color: white;
+}
+#searchResults{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 9px;
+    cursor: pointer;
+    row-gap: 10px;
+}
+
+#searchResults div{
+    border: solid #9a9090;
+    padding: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 26px;
+    line-height: 20.9px;
+    background-color: #f8f8f8;
+}

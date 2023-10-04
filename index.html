@@ -1,0 +1,105 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Research Tool</h1>
+    
+    <!-- Input for the research topic -->
+    <div class="Input">
+        <input type="text" id="researchTopic" placeholder="Enter your research topic">
+    <button onclick="searchResearch()">Search</button>
+    </div>
+    
+    <!-- Container for displaying search results -->
+    <div id="searchResults"></div>
+    
+    <!-- Container for displaying complete content -->
+    <div id="completeContent" ></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+       function searchResearch() {
+    const keyword = document.getElementById("researchTopic").value;
+    const limit = 10; // Set the limit for the number of results
+
+    // Configuration for the Axios request
+    const config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'https://api.gyanibooks.com/search_publication/',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: JSON.stringify({
+            keyword: keyword,
+            limit: limit
+        })
+    };
+
+    // Make an API request to retrieve search results
+    axios.request(config)
+    .then(response => {
+        //const results = response.data.results;
+        results=[
+        {
+            "title": "Nature - Article 1",
+            "content": "Nature, in the broadest sense, is the physical world or universe. Nature can refer to the phenomena of the physical world, and also to life in general. The study of nature is a large, if not the only, part of science. Although humans are part of nature, human activity is often understood as a separate category from other natural phenomena.[1] The word nature is borrowed from the Old French nature and is derived from the Latin word natura, or essential qualities, innate disposition, and in ancient times, literally meant birth.[2] In ancient philosophy, natura is mostly used as the Latin translation of the Greek word physis (φύσις), which originally related to the intrinsic characteristics of plants, animals, and other features of the world to develop of their own accord.[3][4] The concept of nature as a whole, the physical universe, is one of several expansions of the original notion;[1] it began with certain core applications of the word φύσις by pre-Socratic philosophers (though this word had a dynamic dimension then, especially for Heraclitus), and has steadily gained currency ever since.History is a witness to the extinction of organisms as large as dinosaurs and the survival of animals as minute as ants. In addition to other factors, it is inevitable to remember that nature can take up both constructive and destructive roles. Through natural calamities, pandemics and natural crisis situations, nature has well explained the need for us to conserve nature so as to continue life on Earth for our future generations.The first issue of Nature was published on 4 November 1869. Many earlier publishing adventures in science had failed dismally, but Nature's eventual success grew out of the social and scientific conditions under which it was founded — driven by the vision of strong personalities, who forged ahead when the odds seemed against them. Nature, above all, has been a survivor. This it owes to Alexander Macmillan, who tolerated a loss-making venture for three decades; to Norman Lockyer, the first editor; and to a string of influential collaborators and contributors, including biologist Thomas Henry Huxley — one of the heavyweights of Victorian science and a staunch ally of Charles Darwin (he was known as 'Darwin's bulldog').Brothers Alexander and Daniel Macmillan founded their bookshop and publishing house in Cambridge, UK, in 1843. After Daniel's death in 1857, Alexander opened a London branch at 23 Henrietta Street, Covent Garden. Macmillan's headquarters were in Cambridge until 1863, when they moved to 16 Bedford Street in London. The academic standing of the Macmillans in Cambridge (their shop was at the heart of the university city) later helped Alexander to establish contacts with eminent men of science in London. He would host 'tobacco parliaments', at which science, art and hot topics of the day, such as Darwinism, would be discussed. This “talk, tobacco and tipple on Thursdays” group, as he described it, fostered friendships among the great scientific educators of the Victorian era, including Huxley and the physicist John Tyndall, who were eager to write for Macmillan. In 1859, Alexander launched Macmillan's Magazine, the first shilling monthly in England, aiming to unify science, literature and the arts under one banner, with David Masson as the editor. Huxley's article 'Time & Life' was published in the second issue."
+        },
+        {
+            "title": "Nature - Article 2",
+            "content": "Great lengths of mountains, thriving ecosystems, the ever-spreading sky together with the lithosphere, hydrosphere and atmosphere create a saga called “Nature”. Rich both in terms of its scenic beauty and replenishing resources, nature accounts for supporting life in different shapes and forms on our planet.Every member of the living world obtains its life support from nature. Nature guides the cycling of air, water and life between the different constituents or spheres on Earth. The treasures in nature not only provide for our basic requirements of survival but also fuel the raw materials to support factories and industries on which the modern world primarily runs.Since the population is increasing at an exponential rate largely in India and many parts of the world, the “use” of resources has now turned to depletion. Adding to this, are the excessive levels of atmospheric and environmental pollution. Industrial wastes, unchecked use of vehicles, illegal cutting of trees, poaching of animals, nuclear power plants and many more are contributing to the disruption of the natural systems and global warming.Macmillan's 1871 letter to Lockyer reveals that, although Lockyer boasted of 5,000 subscribers and 15,000 readers in 1870 (a circulation in reality not attained even by the end of the century), the future of the fledgling Nature was by no means secure. Macmillan gave it a competitive cover price — at fourpence, it was less than the sixpence charged by most weeklies. Science historian Roy Macleod has estimated that the four pages per issue given over to advertisements in 1869-70 would have accounted for only half the annual costs of producing the magazine, and that there were in fact probably fewer than 200 subscribers in Nature's first year. At least the potential rival weekly Scientific Opinion had ceased publication in 1870, but Nature was not yet established as a preferred place of scientific communication. Nature's contributors were usually eminent men of science, often from the upper echelons of Victorian society, but this did not preclude private squabbles from becoming public — indeed, Lockyer seems to have encouraged controversy in the pages of Nature. The year 1873 saw perhaps the most acrimonious exchange, between physicists Peter Guthrie Tait and John Tyndall. Tait's critique of Tyndall's pamphlet Principal Forbes and his Biographers led to bitter rivalries in the correspondence columns; these resurfaced with a review of Tyndall's book The Forms of Water in Clouds and Rivers, Ice, and Glaciers, and spilled over into other journals, newspapers and pamphlets. It was a damaging affair, and Lockyer was privately chastised. Writing to T. H. Huxley, Tyndall bemoaned that: “My notions regarding him [Lockyer] have been too undisguised.” Writing about a different dispute, Joseph Hooker stated that: “My suspicions are strong against Lockyer, of whom I have heard much that I do not like.” "
+        },
+        {
+            "title": "Nature - Article 3",
+            "content": "Nature is the endless expanse of life forms, beauty, resources, peace and nourishment. Every bud that grows to a flower, every caterpillar that flies with the wings of a butterfly and every infant who faces the world as a human, owes its survival and sustenance to nature. In addition to providing resources for our daily needs of food, clothing and shelter, nature also contributes to different industries and manufacturing units. Paper, furniture, oil, gemstones, petrol, diesel, the fishing industry, electrical units, etc. all derive their basic components from nature.It can be said that nature drives the process of converting everything that is natural on earth into most of the things that are artificial. Nature also maintains the continuity between the different spheres on Earth. Owing to the multiple elements obtained from nature, with a growing population, the need to meet demands is increasing every day. At an equal pace is rising the level of air, water, soil and noise pollution as a result of the universal dependence on technology.While it is necessary to keep up with industrialization, it is an urgent need now to restore stability in nature. People are trying to curb the level of pollution and stop the exhaustion of natural resources. However, more awareness and implementation is a must at the individual and community levels. We must always remember it is us who depend on nature for survival and not the other way round.The short letter of 28 October 1880 by Henry Faulds entitled 'On the Skin-furrows of the Hand' was perhaps one of the earliest significant and original contributions to science published in Nature: “When bloody finger-marks or impressions on clay, glass &c., exist, they may lead to the scientific identification of criminals.” Fingerprint patterns (pictured) were described scientifically in 1823, but Faulds was the first to detail how “skin-furrows” could be used in identification, ethnography, studies of heredity and medical-legal investigations — essentially sketching out the basis of what was to become forensic science. Just a month later, William Hershel (grandson of the discoverer of Uranus) published a letter in Nature claiming previous use of the identification technique in India: “I have been taking sign-manuals by means of finger-marks for now more than twenty years.” Argument raged between the two, with statistician Francis Galton weighing in, but Faulds's letter clearly documents the advantages of having “a nature-copy of the for-ever-unchangeable finger-furrows of important criminals”."
+        },
+        {
+            "title": "Nature - Article 4",
+            "content": "Nature includes living and non-living components that together make life on Earth possible. Some forms of nature can be seen through the lush green forests, the vast sky above us, the oceans without an end, the mountains standing tall and so on. Nature nourishes the survival needs of plants, animals and humans alike. It provides the essential components of oxygen, sunlight, soil and water.Several other products are obtained indirectly from nature which includes timber, paper, medicinal herbs, fibers, cotton, silk and various kinds of food. To fulfill the demand for these products, human beings have now engaged in the slaughter of trees and the destruction of nature. Different industries also poison nature with harmful gases and chemicals in addition to using excessive natural resources.It is the need of the hour now to reduce natural damage, reuse goods and recycle used elements to form newer ones. People from all parts of the world should come together to lessen the pressure on nature and restore its balance.Richard Arman Gregory (pictured) joined Nature in 1893 as an assistant editor, after a brief stint as Lockyer’s assistant at his South Kensington laboratory. The early 1890s were the only time when Gregory was an active researcher: his work was mainly routine, measuring the positions and spectra of sunspots and solar prominences, and he does not appear as co-author on any published papers of original research during his time at South Kensington. Nevertheless, Gregory was a skilled astronomer and teacher, and he resigned from the laboratory in 1893 to pursue work as a journalist and lecturer; he had already taken the post of extension lecturer at the University of Oxford, which he occupied from 1890 to 1895. Lockyer saw in Gregory a man of sharp intellect, and duly recommended to Alexander Macmillan his appointment as assistant editor. Gregory later became an editor for Macmillan’s science books, and oversaw the publication of more than 200 titles until his retirement in 1938."
+        },
+        // Additional results...
+    ]
+        const searchResultsContainer = document.getElementById("searchResults");
+
+        // Clear previous search results
+        searchResultsContainer.innerHTML = '';
+
+        // Check if results is defined and an array
+        if (Array.isArray(results) && results.length > 0) {
+            // Display search results
+            results.forEach(result => {
+                const resultElement = document.createElement("div");
+                resultElement.innerText =result.title+"\n\n" +result.content.substr(0,200);
+                //resultElement.appendChild(document.createElement("div").innerText=result.content.substr(1,100));
+                // const extra=document.createElement("div").innerText=result.content.substr(1,100);
+                // document.
+                // Handle click event to show complete content
+                resultElement.addEventListener("click", () => {
+                    // Display complete content of the clicked result
+                    document.getElementById("completeContent").innerText = result.content;
+                    document.getElementById("completeContent").style.display="block";
+                });
+
+                searchResultsContainer.appendChild(resultElement);
+            });
+        } else {
+            // No results found for the given query
+            alert("No results found for the given query.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred while fetching results. Check the console for more details.");
+    });
+}
+
+
+    </script>
+</body>
+</html>
